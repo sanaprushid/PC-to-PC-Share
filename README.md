@@ -5,7 +5,7 @@ Share **text** and **files** between devices on the same **Wi‑Fi/LAN** without
 
 ## How to run
 1. Open terminal in this folder:
-   - `c:/Users/ajay s/OneDrive/Desktop/New folder/webShare`
+   - `c:/Users/webShare`
 2. Install dependencies:
    - `npm install`
 3. Start server:
