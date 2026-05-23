@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # webShare (Offline LAN)
 
 Share **text** and **files** between devices on the same **Wi‑Fi/LAN** without internet.
@@ -22,3 +23,7 @@ Share **text** and **files** between devices on the same **Wi‑Fi/LAN** without
   - ensure they are on the same Wi‑Fi network/subnet
   - check firewall permissions for Node.js / port `3210`
 
+=======
+# PC-to-PC-Share
+A lightweight, zero-internet local network file and text sharing tool built with Node.js for rapid cross-device transfers over Wi-Fi and mobile hotspots.
+>>>>>>> 578106798ba4e2f61bc4e45ec9502c629e89d13e
