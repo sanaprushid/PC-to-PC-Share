@@ -1,0 +1,15 @@
+{
+  "name": "webshare-offline-lan",
+  "version": "1.0.0",
+  "description": "Offline LAN web share app (text + file) via local Wi-Fi/LAN.",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "multer": "^1.4.5-lts.1"
+  }
+}
+

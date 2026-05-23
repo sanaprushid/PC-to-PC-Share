@@ -1,0 +1,148 @@
+webShare Offline LAN — Animated Flow Guide (Cool Mode)
+========================================================
+
+How it works (quick)
+---------------------
+- One device (Device A) runs the local server.
+- Every other device on the same Wi‑Fi/LAN opens the receiver page.
+- When you send text or a file from Device A, receivers poll and instantly show new items.
+- Works with **NO internet**.
+
+
+--------------------------------------------------------
+FLOW DIAGRAM (animated-style)
+--------------------------------------------------------
+
+Legend:  [A] running server  ->  (poll/receive)  =>  upload/share
+
+
+  (0) Power on + connect to SAME Wi‑Fi/LAN
+  ----------------------------------------
+
+  Device A                        Device B
+  ----------                      ----------
+
+  (1) Open terminal              (1) Browser ready
+      in webShare/                
+
+  [A] npm install                 
+    |                             
+    v                             
+  [A] npm start   => server started on port 3210
+    |                             (2) open receiver URL
+    |----------------------------------------------->
+    |  http://<LAN-IP-A>:3210/receiver.html        
+    v                                               
+
+  (3) Share page on Device A
+      http://<LAN-IP-A>:3210/
+
+  (4) Send
+      - Enter text -> Send text
+      - Choose file -> Send file
+
+  (5) Server stores item in memory
+      items[]
+
+  (6) Receiver polling
+      Every ~1.5s: GET /api/items?since=...
+
+  => Receiver updates with:
+     - Text cards
+     - File cards with Download link
+
+
+--------------------------------------------------------
+STEP-BY-STEP (copy/paste)
+--------------------------------------------------------
+
+START SERVER (Device A)
+------------------------
+1) On Device A, open terminal in:
+   c:/Users/webShare
+
+2) Install dependencies (only first time):
+   npm install
+
+3) Start server:
+   npm start
+
+4) Look at the terminal output:
+   - It prints LAN IP(s) like:
+       LAN IP(s): http://192.168.x.x:3210
+
+5) Copy ONE LAN URL and reuse it on other devices.
+
+
+OPEN SHARE UI (Device A)
+--------------------------
+6) Open in the browser on Device A:
+   http://<LAN-IP-A>:3210/
+
+Tip: Click “Get LAN link” button to auto-fill the receiver URL.
+
+
+OPEN RECEIVER UI (Device B)
+-----------------------------
+7) On Device B (same Wi‑Fi/LAN), open:
+   http://<LAN-IP-A>:3210/receiver.html
+
+8) Wait ~1.5 seconds (auto polling) or hit Refresh.
+
+
+SEND TEXT (Device A)
+---------------------
+9) Type in the textarea.
+10) Click “Send text”.
+11) Device B will show it as a TEXT card.
+
+
+SEND FILE (Device A)
+----------------------
+12) Pick a file.
+13) Click “Send file”.
+14) Device B will show a FILE card with a Download link.
+
+
+--------------------------------------------------------
+ANIMATION-STYLE STATUS (what you’ll see)
+--------------------------------------------------------
+
+When sending:
+  Status box shows:
+   - "Sending text..." / "Uploading <name>..."
+   Then:
+   - "Text shared..." / "File shared..."
+
+When receiving:
+  Receiver list updates automatically (polling ~1.5s).
+
+
+--------------------------------------------------------
+IMPORTANT REQUIREMENTS (No Internet needed)
+--------------------------------------------------------
+- Devices MUST be on the same Wi‑Fi/LAN (same network/subnet).
+- Firewall on the host device must allow the Node server port:
+  - Default port: 3210
+- After start, the system works offline.
+
+
+--------------------------------------------------------
+TROUBLESHOOTING (fast fixes)
+--------------------------------------------------------
+
+1) Device B can’t open receiver URL
+   - Confirm Wi‑Fi is the same.
+   - Try a different LAN IP printed by the server.
+   - Allow Node.js / port 3210 in firewall.
+
+2) Download doesn’t work
+   - The receiver downloads from:
+       /uploads/<savedName>
+   - So port 3210 must also be reachable for file downloads.
+
+
+END
+---
+You’re running an offline LAN share server ✅
+

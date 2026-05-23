@@ -1,0 +1,49 @@
+  <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>webShare — Receiver</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="bg-orb orb1"></div>
+  <div class="bg-orb orb2"></div>
+  <div class="bg-grid"></div>
+
+  <header>
+    <div class="logo">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      Receiver
+    </div>
+    <p class="subtitle">Waiting for shares from the LAN…</p>
+  </header>
+
+  <main>
+    <section class="card" style="--delay:.05s">
+      <div class="card-header-row">
+        <div class="card-label">Incoming</div>
+        <div class="row gap-8">
+          <button id="btnReload" class="icon-btn small">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+            Refresh
+          </button>
+          <button id="btnClear" class="icon-btn danger small">Clear</button>
+        </div>
+      </div>
+      <div id="liveIndicator" class="live-indicator">
+        <span class="live-dot"></span> Live
+      </div>
+      <div id="items" class="items"><div class="empty-state">No items yet. Waiting…</div></div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <footer>
+    <a href="/" target="_blank" rel="noopener">← Back to Share</a>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>

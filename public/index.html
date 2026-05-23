@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>webShare — LAN</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="bg-orb orb1"></div>
+  <div class="bg-orb orb2"></div>
+  <div class="bg-grid"></div>
+
+  <header>
+    <div class="logo">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+      webShare
+    </div>
+    <p class="subtitle">Offline LAN · text &amp; files</p>
+  </header>
+
+  <main>
+    <section class="card" style="--delay:.05s">
+      <div class="card-label">LAN Link</div>
+      <div class="lan-row">
+        <input id="shareUrl" type="text" readonly placeholder="Click to generate…" />
+        <button id="btnRefresh" class="icon-btn" title="Get LAN link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+          Get Link
+        </button>
+        <button id="btnCopy" class="icon-btn secondary" title="Copy URL">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copy
+        </button>
+      </div>
+      <div class="hint">Open this URL on any device on the same Wi‑Fi/LAN.</div>
+    </section>
+
+    <div class="two-col">
+      <section class="card" style="--delay:.12s">
+        <div class="card-label">Send Text</div>
+        <textarea id="text" rows="5" placeholder="Type a message…"></textarea>
+        <button id="btnSendText" class="primary full-w">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Send Text
+        </button>
+      </section>
+
+      <section class="card" style="--delay:.18s">
+        <div class="card-label">Send File</div>
+        <div id="dropZone" class="drop-zone">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="drop-icon"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          <span id="dropLabel">Drop file here or <u>browse</u></span>
+          <input id="file" type="file" />
+        </div>
+        <div id="fileInfo" class="file-info hidden"></div>
+        <div id="progressWrap" class="progress-wrap hidden">
+          <div class="progress-bar-track">
+            <div id="progressBar" class="progress-bar-fill"></div>
+          </div>
+          <span id="progressText" class="progress-text">0%</span>
+        </div>
+        <button id="btnSendFile" class="primary full-w">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          Send File
+        </button>
+      </section>
+    </div>
+
+    <section class="card" style="--delay:.24s">
+      <div class="card-header-row">
+        <div class="card-label">Received Here</div>
+        <button id="btnClear" class="icon-btn danger small">Clear all</button>
+      </div>
+      <div id="items" class="items"><div class="empty-state">No items yet.</div></div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <footer>
+    <a href="/receiver.html" target="_blank" rel="noopener">Open Receiver →</a>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
