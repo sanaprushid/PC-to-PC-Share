@@ -1,6 +1,8 @@
+<img width="2816" height="1536" alt="banner" src="https://github.com/user-attachments/assets/acaa35a0-0802-41e3-a828-8749186f3c6a" />
+
 <<<<<<< HEAD
 # webShare (Offline LAN)
-
+A lightweight, zero-internet local network file and text sharing tool...
 Share **text** and **files** between devices on the same **Wi‑Fi/LAN** without internet.
 
 ## How to run
