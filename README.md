@@ -11,8 +11,9 @@ Share **text** and **files** between devices on the same **Wi‑Fi/LAN** without
 3. Start server:
    - `npm start`
 
-4. From the server terminal output, copy the LAN URL (or open the share page in the browser and click **Get LAN link**).
-5. On another device connected to the same Wi‑Fi/LAN, open the shown receiver URL.
+4. From the server terminal output, copy the LAN URL (or open the share page in the browser and click **Get LAN link**)
+5. or for step 4 use pc ip and server port [http://pc-ip:3210]
+6. On another device connected to the same Wi‑Fi/LAN, open the shown receiver URL.
 
 ## Notes
 - Works offline **as long as all devices are on the same local network**.
